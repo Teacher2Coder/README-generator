@@ -26,8 +26,6 @@ Open a preview of your README.md and click on the License link. Copy and past th
 You can add any additional edits to the README.md if you so choose.
 
 When the README.md is to your satisfaction, add it to your application's repository.
-
-![workflow video](./assets/workflow.mov)
  
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
