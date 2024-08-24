@@ -19,11 +19,15 @@ Go to the README-generator directory and enter ```node index.js```
 
 Once the application has been initialized, just answer the questions and a README.md file will appear in the directory. 
 
+![console prompts](./assets/questions.png)
+
 Open a preview of your README.md and click on the License link. Copy and past the license to the README.md and make any edits that you may need.
 
 You can add any additional edits to the README.md if you so choose.
 
 When the README.md is to your satisfaction, add it to your application's repository.
+
+![workflow video](./assets/workflow.mov)
  
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
