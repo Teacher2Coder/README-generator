@@ -1,9 +1,9 @@
 // DONE: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generate = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
+// DONE: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -38,8 +38,8 @@ const questions = [
     {
         type: 'list',
         message: 'What kind of licence do you want for your application?',
-        name: 'licence',
-        choices: ["MIT", "Apache", "MPL", "BSD", "PD", "CC0", "GPL", "AGPL", "JRL", "Proprietary"],
+        name: 'license',
+        choices: ["Apache", "Boost", "BSD 3-Clause", "BSD 2-Clause", "CC0", "Eclipse", "ISC", "MIT", "Mozilla", "WTFPL", "No License"],
     },
     {
         type: 'input',
@@ -53,35 +53,19 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// DONE: Create a function to write README file
+function writeToFile(response) {
+    generateMarkdown(response);
+};
 
-// TODO: Create a function to initialize app
-function init() {}
+// DONE: Create a function to initialize app
+function init() {
+    inquirer
+    .prompt(questions)
+    .then((response) => {
+        writeToFile(response);
+    })
+}
 
 // Function call to initialize app
 init();
-
-inquirer
-    .prompt(questions)
-    .then((response) => {
-        const title = `# ${response.appName}`
-        fs.writeFile("README.md", title, (err) => {
-            if (err) throw err;
-        });
-        fs.appendFile('README.md', "", (err) => {
-            if (err) throw err;
-        });
-        fs.appendFile('README.md', "## Description", (err) => {
-            if (err) throw err;
-        });
-        // console.log(response.email);
-        // console.log(response.appName);
-        // console.log(response.description);
-        // console.log(response.install);
-        // console.log(response.usage);
-        // console.log(response.licence);
-        // console.log(response.contribute);
-        // console.log(response.tests);
-        console.log("README successfully created");
-    })
