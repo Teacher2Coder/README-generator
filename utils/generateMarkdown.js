@@ -117,6 +117,9 @@ function generateMarkdown(response) {
   // Adds the Application's description
   fs.appendFileSync('README.md', `\n${response.description}`, (err) => err && console.error(err));
 
+  // Adds a space to input the location of the deployed application
+  fs.appendFileSync('README.md', `\n ### Link to deployed application`)
+
   // Adds the table of contents
   fs.appendFileSync('README.md', `\n \n## Table of Contents`, (err) => err && console.error(err));
   fs.appendFileSync('README.md', `\n* [Installation](#installation)`, (err) => err && console.error(err));
